@@ -21,16 +21,16 @@ public class ExcelWriter {
 
         int firstNum = 0;
 
-        for(int i = firstNum; i < z.size(); ++i){
+        for (int i = firstNum; i < z.size(); ++i) {
             row = sheet.createRow(i);
 
-            for(int j = 0; j < z.size(); ++j){
+            for (int j = 0; j < z.size(); ++j) {
                 cell = row.createCell(3 + j);
                 cell.setCellValue(z.get(i).get(j));
             }
         }
 
-        try (FileOutputStream outputStream = new FileOutputStream("src/main/resources/" + filename +".xlsx")) {
+        try (FileOutputStream outputStream = new FileOutputStream("src/main/resources/" + filename + ".xlsx")) {
             workbook.write(outputStream);
         }
     }

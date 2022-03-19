@@ -16,7 +16,9 @@ public class Model {
     private static final double R = 5;
     private static final double m = -3;
     @Getter
-    private static final int n = 127;
+    //max n for web = 10
+    //max n for exel = 127
+    private static final int n = 10;
     private static final double alpha = 1;
     private static final double p = -5;
     private static final BesselJ besselJ = new BesselJ(abs(p));
@@ -28,7 +30,6 @@ public class Model {
     private List<Complex> f_k;
     @Getter
     private List<List<Complex>> restoredBesselList;
-
     @Getter
     private List<List<Double>> restoredBesselPhase;
     @Getter
@@ -47,9 +48,9 @@ public class Model {
 
         int a;
 
-        for (int i = 0; i < list.size()*2; ++i) {
+        for (int i = 0; i < list.size() * 2; ++i) {
             List<Complex> row = new ArrayList<>();
-            for (int j = 0; j < list.size()*2; ++j) {
+            for (int j = 0; j < list.size() * 2; ++j) {
                 a = (int) round(sqrt(pow(i - n, 2) + pow(j - n, 2)));
 
                 if (a >= n)
