@@ -22,10 +22,12 @@ public class View extends VerticalLayout {
 
         addGraph(model.getX_f(), "Bessel modes");
 
-        add(new H2("Restored Bessel"), new FormLayout(
-                addScatter(model.getRestoredBesselPhase(), model.getX_k(), "Restored Bessel Phase"),
-                addScatter(model.getRestoredBesselAmplitude(), model.getX_k(), "Restored Bessel Amplitude")
-        ));
+//        add(new H2("Restored Bessel"), new FormLayout(
+//                addScatter(model.getRestoredBesselPhase(), model.getX_k(), "Restored Bessel Phase"),
+//                addScatter(model.getRestoredBesselAmplitude(), model.getX_k(), "Restored Bessel Amplitude")
+//        ));
+
+        addGraph(model.getHankelTransformedListForView(), "Function after Hankel transformation");
     }
 
     private void addGraph(List<Entity<Double, Complex>> list, String title) {

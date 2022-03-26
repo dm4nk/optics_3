@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class ExcelWriter {
-    public static final int n = 200;
+    //public static final int n = 200;
 
     public static void write(String filename, List<List<Double>> z) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
@@ -22,10 +22,10 @@ public class ExcelWriter {
         int firstNum = 0;
 
         for (int i = firstNum; i < z.size(); ++i) {
-            row = sheet.createRow(i);
+            row = sheet.createRow(i + 1);
 
             for (int j = 0; j < z.size(); ++j) {
-                cell = row.createCell(3 + j);
+                cell = row.createCell(j);
                 cell.setCellValue(z.get(i).get(j));
             }
         }
