@@ -5,8 +5,8 @@ import com.dm4nk.optics_3.utility.Entity;
 import com.vaadin.flow.component.charts.Chart;
 import com.vaadin.flow.component.charts.model.*;
 import com.vaadin.flow.component.charts.model.style.SolidColor;
-import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import org.apache.commons.math3.complex.Complex;
@@ -28,6 +28,9 @@ public class View extends VerticalLayout {
 //        ));
 
         addGraph(model.getHankelTransformedListForView(), "Function after Hankel transformation");
+
+        add(new H3("Hankel transformation time : " + model.getHankelTime()));
+        add(new H3("FFT transformation time : " + model.getFftTime()));
     }
 
     private void addGraph(List<Entity<Double, Complex>> list, String title) {
