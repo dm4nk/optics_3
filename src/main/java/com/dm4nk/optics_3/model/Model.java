@@ -71,14 +71,14 @@ public class Model {
         List<Complex> result = new ArrayList<>();
         for (int i = 0; i < rList.size(); i++) {
             List<Double> besselValues = new ArrayList<>();
+
             for (Double r : rList)
                 besselValues.add(besselJForHankel.value(2 * Math.PI * rList.get(i) * r));
 
             Complex ro = IntStream.range(0, besselValues.size())
                     .mapToObj(k -> f.get(k)
                             .multiply(besselValues.get(k))
-                            .multiply(rList.get(k))
-                            .multiply(h))
+                            .multiply(rList.get(k)))
                     .reduce(Complex::add)
                     .get();
 

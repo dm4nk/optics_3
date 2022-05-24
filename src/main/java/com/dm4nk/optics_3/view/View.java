@@ -29,8 +29,8 @@ public class View extends VerticalLayout {
 
         addGraph(model.getHankelTransformedListForView(), "Function after Hankel transformation");
 
-        add(new H3("Hankel transformation time : " + model.getHankelTime()));
-        add(new H3("FFT transformation time : " + model.getFftTime()));
+        add(new H3("Hankel transformation time : " + model.getHankelTime() + " ms"));
+        add(new H3("FFT transformation time : " + model.getFftTime() + " ms"));
     }
 
     private void addGraph(List<Entity<Double, Complex>> list, String title) {
