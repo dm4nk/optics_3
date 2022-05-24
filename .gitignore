@@ -32,3 +32,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### my ###
+/.jython_cache/
+/.mvn/
+/frontend/
+!**/venv/
